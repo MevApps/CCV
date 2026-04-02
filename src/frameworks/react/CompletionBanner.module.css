@@ -1,0 +1,42 @@
+.banner {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: var(--ccv-space-8);
+  background: var(--ccv-bg-secondary); border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-lg);
+}
+.checkmark {
+  width: 48px; height: 48px; border-radius: var(--ccv-radius-circle);
+  background: rgba(34,197,94,0.12); color: var(--ccv-status-active);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: var(--ccv-space-4);
+}
+.heading { font-size: var(--ccv-heading-md); font-weight: 600; color: var(--ccv-text-primary); margin-bottom: var(--ccv-space-2); }
+.summary { font-size: var(--ccv-body-sm); color: var(--ccv-text-secondary); margin-bottom: var(--ccv-space-6); }
+.stats { display: flex; gap: var(--ccv-space-8); margin-bottom: var(--ccv-space-6); }
+.stat { display: flex; flex-direction: column; align-items: center; }
+.statValue { font-size: var(--ccv-heading-md); font-weight: 600; color: var(--ccv-text-primary); font-family: var(--ccv-font-mono); }
+.statLabel { font-size: var(--ccv-caption); color: var(--ccv-text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+.actions { display: flex; gap: var(--ccv-space-3); }
+.retroBtn {
+  background: rgba(251,146,60,0.12); color: var(--ccv-team-learner);
+  border: 1px solid rgba(251,146,60,0.2); border-radius: var(--ccv-radius-md);
+  padding: var(--ccv-space-2) var(--ccv-space-5); font-family: var(--ccv-font-sans);
+  font-size: var(--ccv-body-sm); font-weight: 500; cursor: pointer;
+  transition: background var(--ccv-transition-fast);
+}
+.retroBtn:hover { background: rgba(251,146,60,0.18); }
+.newBtn {
+  background: var(--ccv-accent-primary); color: white; border: none;
+  border-radius: var(--ccv-radius-md); padding: var(--ccv-space-2) var(--ccv-space-5);
+  font-family: var(--ccv-font-sans); font-size: var(--ccv-body-sm); font-weight: 600;
+  cursor: pointer; transition: background var(--ccv-transition-fast);
+}
+.newBtn:hover { background: var(--ccv-accent-hover); }
+.filesBtn {
+  background: transparent; color: var(--ccv-text-secondary);
+  border: 1px solid var(--ccv-border-default); border-radius: var(--ccv-radius-md);
+  padding: var(--ccv-space-2) var(--ccv-space-5); font-family: var(--ccv-font-sans);
+  font-size: var(--ccv-body-sm); cursor: pointer;
+  transition: border-color var(--ccv-transition-fast);
+}
+.filesBtn:hover { border-color: var(--ccv-border-hover); color: var(--ccv-text-primary); }
