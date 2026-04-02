@@ -1,0 +1,30 @@
+.missionView {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.composerArea {
+  border-top: 1px solid var(--ccv-border-default);
+  padding: var(--ccv-space-4);
+  display: flex;
+  justify-content: center;
+  background: var(--ccv-bg-primary);
+}
+
+.composerWrapper {
+  max-width: 660px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .composerArea {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    padding: var(--ccv-space-3);
+  }
+}
