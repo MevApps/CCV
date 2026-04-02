@@ -1,0 +1,3 @@
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 200px; text-align: center; }
+.emptyIcon { font-size: 2rem; color: var(--ccv-text-tertiary); margin-bottom: var(--ccv-space-3); }
+.emptyText { font-size: var(--ccv-body-sm); color: var(--ccv-text-tertiary); max-width: 240px; }

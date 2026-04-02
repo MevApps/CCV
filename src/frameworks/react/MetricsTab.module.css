@@ -1,0 +1,7 @@
+.metrics { display: flex; flex-direction: column; gap: var(--ccv-space-3); }
+.card { background: var(--ccv-bg-tertiary); border-radius: var(--ccv-radius-md); padding: var(--ccv-space-3); }
+.cardLabel { font-size: var(--ccv-caption); color: var(--ccv-text-tertiary); margin-bottom: var(--ccv-space-1); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.cardValue { font-size: var(--ccv-heading-md); font-weight: 600; color: var(--ccv-text-primary); font-family: var(--ccv-font-mono); }
+.budgetBar { height: 4px; background: var(--ccv-bg-secondary); border-radius: 2px; margin-top: var(--ccv-space-2); overflow: hidden; }
+.budgetFill { height: 100%; background: var(--ccv-accent-primary); border-radius: 2px; transition: width var(--ccv-transition-default); }
+.empty { padding: var(--ccv-space-8); text-align: center; color: var(--ccv-text-tertiary); font-size: var(--ccv-body-sm); }

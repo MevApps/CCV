@@ -1,0 +1,14 @@
+.stageList { display: flex; flex-direction: column; gap: var(--ccv-space-1); }
+.stageItem { display: flex; align-items: center; gap: var(--ccv-space-3); padding: var(--ccv-space-3); border-radius: var(--ccv-radius-md); }
+.in_progress { background: var(--ccv-accent-ghost); }
+.statusIcon { font-size: var(--ccv-body-md); width: 20px; text-align: center; flex-shrink: 0; }
+.completed .statusIcon { color: var(--ccv-status-active); }
+.in_progress .statusIcon { color: var(--ccv-accent-primary); }
+.pending .statusIcon { color: var(--ccv-text-tertiary); }
+.blocked .statusIcon { color: var(--ccv-status-blocked); }
+.stageInfo { flex: 1; }
+.stageName { font-size: var(--ccv-body-sm); font-weight: 500; color: var(--ccv-text-primary); }
+.stageMeta { font-size: var(--ccv-caption); color: var(--ccv-text-tertiary); display: flex; align-items: center; gap: var(--ccv-space-2); }
+.assignees { display: flex; gap: 2px; }
+.memberDot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.empty { padding: var(--ccv-space-8); text-align: center; color: var(--ccv-text-tertiary); font-size: var(--ccv-body-sm); }
