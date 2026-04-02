@@ -1,78 +1,170 @@
 /* ============================================================
    Claude Code Visualizer — Design Tokens & Base Styles
-   "Terminal-luxe" aesthetic: dark backgrounds, monospace accents,
-   subtle borders, precise spacing.
+   Warm-tinted neutrals with light mode support.
    ============================================================ */
 
 :root {
-  /* --- Base Palette --- */
-  --ccv-bg-primary:       #0D0F11;
-  --ccv-bg-secondary:     #151820;
-  --ccv-bg-tertiary:      #1C2028;
-  --ccv-bg-terminal:      #0A0C0E;
+  /* --- Surfaces (dark default) --- */
+  --ccv-bg-base:        #111214;
+  --ccv-bg-primary:     #1A1B1E;
+  --ccv-bg-secondary:   #222328;
+  --ccv-bg-tertiary:    #2A2C32;
+  --ccv-bg-elevated:    #32343B;
+  --ccv-bg-sunken:      #131417;
 
-  --ccv-text-primary:     #E8ECF1;
-  --ccv-text-secondary:   #8B95A5;
-  --ccv-text-tertiary:    #5A6370;
+  /* --- Text --- */
+  --ccv-text-primary:   #EAEDF2;
+  --ccv-text-secondary: #9199A8;
+  --ccv-text-tertiary:  #5C6478;
+  --ccv-text-disabled:  #3A3E4A;
 
-  --ccv-border-default:   #1E2430;
-  --ccv-border-focus:     #3B82F6;
+  /* --- Accent --- */
+  --ccv-accent-primary:  #4B8DF8;
+  --ccv-accent-hover:    #3A7AE6;
+  --ccv-accent-pressed:  #2D6AD4;
+  --ccv-accent-subtle:   rgba(75, 141, 248, 0.12);
+  --ccv-accent-ghost:    rgba(75, 141, 248, 0.06);
 
-  /* --- Accent (Primary Action) --- */
-  --ccv-accent-primary:   #3B82F6;
-  --ccv-accent-hover:     #2563EB;
-  --ccv-accent-subtle:    rgba(59, 130, 246, 0.12);
+  /* --- Borders --- */
+  --ccv-border-default: #2A2D35;
+  --ccv-border-hover:   #363940;
+  --ccv-border-focus:   #4B8DF8;
 
   /* --- Semantic Status Colors --- */
   --ccv-status-active:    #22C55E;
-  --ccv-status-complete:  #3B82F6;
+  --ccv-status-complete:  #4B8DF8;
   --ccv-status-blocked:   #EF4444;
-  --ccv-status-pending:   #6B7280;
   --ccv-status-paused:    #F59E0B;
+  --ccv-status-pending:   #6B7280;
 
   /* --- Team Member Colors --- */
-  --ccv-team-architect:   #A78BFA;
-  --ccv-team-developer:   #34D399;
-  --ccv-team-qa:          #FBBF24;
-  --ccv-team-reviewer:    #60A5FA;
-  --ccv-team-product:     #F472B6;
-  --ccv-team-learner:     #FB923C;
+  --ccv-team-architect: #A78BFA;
+  --ccv-team-developer: #34D399;
+  --ccv-team-qa:        #FBBF24;
+  --ccv-team-reviewer:  #60A5FA;
+  --ccv-team-product:   #F472B6;
+  --ccv-team-learner:   #FB923C;
 
   /* --- Mission Type Colors --- */
-  --ccv-type-brainstorm:  #C084FC;
-  --ccv-type-spec:        #67E8F9;
-  --ccv-type-plan:        #86EFAC;
-  --ccv-type-task:        #60A5FA;
-  --ccv-type-epic:        #F472B6;
-  --ccv-type-review:      #FDE047;
-  --ccv-type-bug:         #FCA5A5;
-  --ccv-type-profiling:   #FDBA74;
+  --ccv-type-brainstorm: #C084FC;
+  --ccv-type-spec:       #67E8F9;
+  --ccv-type-plan:       #86EFAC;
+  --ccv-type-task:       #60A5FA;
+  --ccv-type-epic:       #F472B6;
+  --ccv-type-review:     #FDE047;
+  --ccv-type-bug:        #FCA5A5;
+  --ccv-type-profiling:  #FDBA74;
 
   /* --- Typography --- */
-  --ccv-font-mono:        var(--font-jetbrains-mono), 'Fira Code', 'SF Mono', monospace;
-  --ccv-font-sans:        var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --ccv-font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --ccv-font-mono: var(--font-jetbrains-mono), 'Fira Code', 'SF Mono', monospace;
 
-  --ccv-text-xs:   0.75rem;
-  --ccv-text-sm:   0.875rem;
-  --ccv-text-base: 1rem;
-  --ccv-text-lg:   1.125rem;
-  --ccv-text-xl:   1.5rem;
-  --ccv-text-2xl:  2rem;
+  --ccv-heading-xl: 1.75rem;    /* 28px */
+  --ccv-heading-lg: 1.375rem;   /* 22px */
+  --ccv-heading-md: 1.125rem;   /* 18px */
+  --ccv-body-lg:    1rem;       /* 16px */
+  --ccv-body-md:    0.9375rem;  /* 15px */
+  --ccv-body-sm:    0.8125rem;  /* 13px */
+  --ccv-caption:    0.75rem;    /* 12px */
+  --ccv-label:      0.6875rem;  /* 11px */
+  --ccv-code:       0.75rem;    /* 12px */
+  --ccv-terminal:   0.6875rem;  /* 11px */
 
   /* --- Spacing (4px base) --- */
-  --ccv-space-1:  0.25rem;
-  --ccv-space-2:  0.5rem;
-  --ccv-space-3:  0.75rem;
-  --ccv-space-4:  1rem;
-  --ccv-space-6:  1.5rem;
-  --ccv-space-8:  2rem;
-  --ccv-space-12: 3rem;
-  --ccv-space-16: 4rem;
+  --ccv-space-0:  0px;
+  --ccv-space-1:  4px;
+  --ccv-space-2:  8px;
+  --ccv-space-3:  12px;
+  --ccv-space-4:  16px;
+  --ccv-space-5:  20px;
+  --ccv-space-6:  24px;
+  --ccv-space-8:  32px;
+  --ccv-space-10: 40px;
+  --ccv-space-12: 48px;
+  --ccv-space-16: 64px;
+  --ccv-space-20: 80px;
 
   /* --- Radii --- */
-  --ccv-radius-sm: 4px;
-  --ccv-radius-md: 6px;
-  --ccv-radius-lg: 8px;
+  --ccv-radius-sm:     4px;
+  --ccv-radius-md:     6px;
+  --ccv-radius-lg:     8px;
+  --ccv-radius-xl:     20px;
+  --ccv-radius-pill:   9999px;
+  --ccv-radius-circle: 50%;
+
+  /* --- Transitions --- */
+  --ccv-transition-fast:    120ms ease;
+  --ccv-transition-default: 200ms ease;
+  --ccv-transition-slow:    300ms ease-out;
+  --ccv-transition-spring:  300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Shadows (dark) --- */
+  --ccv-shadow-sm:       0 1px 2px rgba(0, 0, 0, 0.2);
+  --ccv-shadow-md:       0 4px 12px rgba(0, 0, 0, 0.25);
+  --ccv-shadow-lg:       0 8px 24px rgba(0, 0, 0, 0.3);
+  --ccv-shadow-focus:    0 0 0 2px rgba(75, 141, 248, 0.2);
+
+  /* --- Overlays --- */
+  --ccv-overlay-dim:   rgba(0, 0, 0, 0.5);
+  --ccv-overlay-light: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   Light Mode Tokens
+   ============================================================ */
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* --- Surfaces --- */
+  --ccv-bg-base:      #F5F6F8;
+  --ccv-bg-primary:   #FFFFFF;
+  --ccv-bg-secondary: #F0F1F4;
+  --ccv-bg-tertiary:  #E4E6EB;
+  --ccv-bg-elevated:  #FFFFFF;
+  --ccv-bg-sunken:    #1E1F23;
+
+  /* --- Text --- */
+  --ccv-text-primary:   #1A1D24;
+  --ccv-text-secondary: #5C6478;
+  --ccv-text-tertiary:  #8B91A0;
+  --ccv-text-disabled:  #B8BCC8;
+
+  /* --- Accent --- */
+  --ccv-accent-primary:  #3B7CF5;
+  --ccv-accent-hover:    #2D6AE0;
+  --ccv-accent-pressed:  #1F5ACB;
+  --ccv-accent-subtle:   rgba(59, 124, 245, 0.10);
+  --ccv-accent-ghost:    rgba(59, 124, 245, 0.05);
+
+  /* --- Borders --- */
+  --ccv-border-default: #D8DBE2;
+  --ccv-border-hover:   #C5C9D2;
+  --ccv-border-focus:   #4B8DF8;
+
+  /* --- Team Member Colors (light) --- */
+  --ccv-team-architect: #7C3AED;
+  --ccv-team-developer: #059669;
+  --ccv-team-qa:        #D97706;
+  --ccv-team-reviewer:  #2563EB;
+  --ccv-team-product:   #DB2777;
+  --ccv-team-learner:   #D97706;
+
+  /* --- Mission Type Colors (light) --- */
+  --ccv-type-brainstorm: #7C3AED;
+  --ccv-type-spec:       #0891B2;
+  --ccv-type-plan:       #16A34A;
+  --ccv-type-task:       #2563EB;
+  --ccv-type-epic:       #DB2777;
+  --ccv-type-review:     #CA8A04;
+  --ccv-type-bug:        #DC2626;
+  --ccv-type-profiling:  #EA580C;
+
+  /* --- Shadows (light) --- */
+  --ccv-shadow-sm:    0 1px 2px rgba(0, 0, 0, 0.05);
+  --ccv-shadow-md:    0 4px 12px rgba(0, 0, 0, 0.08);
+  --ccv-shadow-lg:    0 8px 24px rgba(0, 0, 0, 0.12);
+  --ccv-shadow-focus: 0 0 0 2px rgba(75, 141, 248, 0.15);
 }
 
 /* ============================================================
@@ -100,9 +192,9 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--ccv-text-primary);
-  background: var(--ccv-bg-primary);
+  background: var(--ccv-bg-base);
   font-family: var(--ccv-font-sans);
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-md);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -117,16 +209,17 @@ a {
    ============================================================ */
 
 .ccv-card {
-  background: var(--ccv-bg-secondary);
+  background: var(--ccv-bg-primary);
   border: 1px solid var(--ccv-border-default);
   border-radius: var(--ccv-radius-lg);
   padding: var(--ccv-space-4);
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition: border-color var(--ccv-transition-fast),
+              box-shadow var(--ccv-transition-fast);
 }
 
 .ccv-card:hover {
-  border-color: var(--ccv-border-focus);
-  box-shadow: 0 0 0 1px var(--ccv-border-focus);
+  border-color: var(--ccv-border-hover);
+  box-shadow: var(--ccv-shadow-md);
 }
 
 .ccv-input {
@@ -134,16 +227,18 @@ a {
   border: 1px solid var(--ccv-border-default);
   border-radius: var(--ccv-radius-md);
   color: var(--ccv-text-primary);
-  font-family: var(--ccv-font-mono);
+  font-family: var(--ccv-font-sans);
+  font-size: var(--ccv-body-md);
   padding: var(--ccv-space-3) var(--ccv-space-4);
-  font-size: var(--ccv-text-sm);
   width: 100%;
+  transition: border-color var(--ccv-transition-fast),
+              box-shadow var(--ccv-transition-fast);
 }
 
 .ccv-input:focus {
-  border-color: var(--ccv-accent-primary);
+  border-color: var(--ccv-border-focus);
   outline: none;
-  box-shadow: 0 0 0 2px var(--ccv-accent-subtle);
+  box-shadow: var(--ccv-shadow-focus);
 }
 
 .ccv-input::placeholder {
@@ -156,9 +251,9 @@ a {
   gap: var(--ccv-space-1);
   padding: 2px var(--ccv-space-2);
   border-radius: var(--ccv-radius-sm);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-label);
   font-family: var(--ccv-font-mono);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: color-mix(in srgb, var(--badge-color) 15%, transparent);
@@ -174,8 +269,9 @@ a {
   border-radius: var(--ccv-radius-md);
   border: none;
   cursor: pointer;
-  font-size: var(--ccv-text-sm);
-  transition: background 150ms ease, transform 100ms ease;
+  font-size: var(--ccv-body-sm);
+  transition: background var(--ccv-transition-fast),
+              transform var(--ccv-transition-fast);
 }
 
 .ccv-button-primary:hover {
@@ -183,6 +279,7 @@ a {
 }
 
 .ccv-button-primary:active {
+  background: var(--ccv-accent-pressed);
   transform: scale(0.98);
 }
 
@@ -195,11 +292,32 @@ a {
   border-radius: var(--ccv-radius-md);
   border: 1px solid var(--ccv-border-default);
   cursor: pointer;
-  font-size: var(--ccv-text-sm);
-  transition: border-color 150ms ease, color 150ms ease;
+  font-size: var(--ccv-body-sm);
+  transition: border-color var(--ccv-transition-fast),
+              color var(--ccv-transition-fast);
 }
 
 .ccv-button-secondary:hover {
-  border-color: var(--ccv-text-tertiary);
+  border-color: var(--ccv-border-hover);
   color: var(--ccv-text-primary);
+}
+
+.ccv-button-secondary:active {
+  border-color: var(--ccv-border-focus);
+  color: var(--ccv-text-primary);
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
