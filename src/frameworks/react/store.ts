@@ -17,7 +17,6 @@ import type { Mission } from '@/domain';
 
 interface UiState {
   sidebarCollapsed: boolean;
-  missionDetailView: 'kanban' | 'table';
   searchQuery: string;
   theme: 'dark' | 'light' | 'system';
   rightPanelOpen: boolean;
@@ -48,7 +47,6 @@ interface AppState {
 
   // Actions — UI
   setSidebarCollapsed: (collapsed: boolean) => void;
-  setMissionDetailView: (view: 'kanban' | 'table') => void;
   setSearchQuery: (query: string) => void;
   setTheme: (theme: 'dark' | 'light' | 'system') => void;
   setRightPanelOpen: (open: boolean) => void;
@@ -66,7 +64,6 @@ export const useAppStore = create<AppState>((set) => ({
   activeMission: null,
   ui: {
     sidebarCollapsed: false,
-    missionDetailView: 'kanban',
     searchQuery: '',
     theme: 'dark',
     rightPanelOpen: true,
@@ -95,9 +92,6 @@ export const useAppStore = create<AppState>((set) => ({
   // UI actions
   setSidebarCollapsed: (collapsed) =>
     set((state) => ({ ui: { ...state.ui, sidebarCollapsed: collapsed } })),
-
-  setMissionDetailView: (view) =>
-    set((state) => ({ ui: { ...state.ui, missionDetailView: view } })),
 
   setSearchQuery: (query) =>
     set((state) => ({ ui: { ...state.ui, searchQuery: query } })),

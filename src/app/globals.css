@@ -209,7 +209,7 @@ a {
    ============================================================ */
 
 .ccv-card {
-  background: var(--ccv-bg-primary);
+  background: var(--ccv-bg-secondary);
   border: 1px solid var(--ccv-border-default);
   border-radius: var(--ccv-radius-lg);
   padding: var(--ccv-space-4);

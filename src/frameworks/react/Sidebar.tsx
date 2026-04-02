@@ -48,7 +48,7 @@ export function Sidebar({ collapsed, onToggleCollapse, currentRoute, onNavigate 
   const today = filtered.filter((m) => m.status === 'completed' || m.status === 'failed' || m.status === 'cancelled');
 
   return (
-    <aside className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`}>
+    <aside role="navigation" className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`}>
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.logoIcon}>C</div>
@@ -89,7 +89,7 @@ export function Sidebar({ collapsed, onToggleCollapse, currentRoute, onNavigate 
       <div className={styles.newMissionWrapper}>
         <button
           className={styles.newMissionBtn}
-          onClick={() => onNavigate('/missions/new')}
+          onClick={() => onNavigate('/')}
           aria-label="Create new mission"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -100,7 +100,7 @@ export function Sidebar({ collapsed, onToggleCollapse, currentRoute, onNavigate 
       </div>
 
       {/* Mission list */}
-      <div className={styles.missionList}>
+      <div role="listbox" className={styles.missionList}>
         {running.length > 0 && (
           <section className={styles.group}>
             <h2 className={styles.groupLabel}>Running</h2>

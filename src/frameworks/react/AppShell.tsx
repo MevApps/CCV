@@ -14,7 +14,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const rightPanelOpen = useAppStore((s) => s.ui.rightPanelOpen);
   const setSidebarCollapsed = useAppStore((s) => s.setSidebarCollapsed);
 
-  const isMissionRoute = pathname.startsWith('/missions/') && pathname !== '/missions/create';
+  const isMissionRoute = pathname.startsWith('/missions/');
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

@@ -46,7 +46,7 @@
 }
 
 .popupTitle {
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-sm);
   font-weight: 600;
   color: var(--ccv-text-primary);
 }
@@ -76,7 +76,7 @@
 }
 
 .sectionTitle {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-mono);
   color: var(--ccv-text-tertiary);
   text-transform: uppercase;
@@ -99,14 +99,14 @@
 }
 
 .statValue {
-  font-size: var(--ccv-text-lg);
+  font-size: var(--ccv-body-lg);
   font-weight: 700;
   font-family: var(--ccv-font-mono);
   color: var(--ccv-text-primary);
 }
 
 .statLabel {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-text-tertiary);
 }
 
@@ -156,7 +156,7 @@
 }
 
 .settingLabel {
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-sm);
   color: var(--ccv-text-secondary);
 }
 
@@ -166,7 +166,7 @@
   border-radius: var(--ccv-radius-sm);
   color: var(--ccv-text-primary);
   font-family: var(--ccv-font-mono);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   padding: var(--ccv-space-1) var(--ccv-space-2);
   width: 160px;
   text-align: right;
@@ -209,7 +209,7 @@
 }
 
 .configPath {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-mono);
   color: var(--ccv-text-tertiary);
   padding: var(--ccv-space-2) var(--ccv-space-3);

@@ -21,7 +21,7 @@
 }
 
 .headerTitle {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-mono);
   font-weight: 600;
   text-transform: uppercase;
@@ -37,7 +37,7 @@
 }
 
 .summary {
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-sm);
   color: var(--ccv-text-primary);
   line-height: 1.6;
 }
@@ -49,7 +49,7 @@
 }
 
 .sectionTitle {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-mono);
   color: var(--ccv-text-tertiary);
   text-transform: uppercase;
@@ -67,7 +67,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--ccv-space-2);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-text-secondary);
   line-height: 1.5;
 }
@@ -94,7 +94,7 @@
   color: var(--ccv-team-learner);
   border: 1px solid color-mix(in srgb, var(--ccv-team-learner) 25%, transparent);
   font-family: var(--ccv-font-mono);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-weight: 600;
   padding: var(--ccv-space-2) var(--ccv-space-4);
   border-radius: var(--ccv-radius-md);
@@ -112,7 +112,7 @@
   display: flex;
   align-items: center;
   gap: var(--ccv-space-2);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-team-learner);
   font-family: var(--ccv-font-mono);
 }

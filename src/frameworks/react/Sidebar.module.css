@@ -44,7 +44,7 @@
   justify-content: center;
   flex-shrink: 0;
   font-family: var(--ccv-font-mono);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-weight: 700;
   color: #fff;
   letter-spacing: -0.02em;
@@ -52,7 +52,7 @@
 
 .logoText {
   font-family: var(--ccv-font-mono);
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-sm);
   font-weight: 600;
   color: var(--ccv-text-primary);
   white-space: nowrap;
@@ -123,7 +123,7 @@
   border: 1px solid var(--ccv-border-default);
   border-radius: var(--ccv-radius-md);
   color: var(--ccv-text-primary);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-sans);
   outline: none;
   transition: border-color 150ms ease;
@@ -169,7 +169,7 @@
   color: #fff;
   border: none;
   border-radius: var(--ccv-radius-md);
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-sm);
   font-family: var(--ccv-font-sans);
   font-weight: 500;
   cursor: pointer;
@@ -297,7 +297,7 @@
 /* ── Mission text ── */
 
 .missionTitle {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-text-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -343,7 +343,7 @@
 
 .emptyState {
   padding: var(--ccv-space-4) var(--ccv-space-2);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-text-tertiary);
   text-align: center;
   margin: 0;
@@ -375,7 +375,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-text-secondary);
   font-weight: 600;
 }
@@ -391,7 +391,7 @@
 }
 
 .footerName {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   color: var(--ccv-text-primary);
   font-weight: 500;
   white-space: nowrap;

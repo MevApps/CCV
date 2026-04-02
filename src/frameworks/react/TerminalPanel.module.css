@@ -18,7 +18,7 @@
 }
 
 .terminalTitle {
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-mono);
   color: var(--ccv-text-tertiary);
   text-transform: uppercase;
@@ -52,7 +52,7 @@
   color: var(--ccv-text-tertiary);
   cursor: pointer;
   padding: var(--ccv-space-1);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   font-family: var(--ccv-font-mono);
   border-radius: var(--ccv-radius-sm);
   transition: color 150ms ease, background 150ms ease;
@@ -68,7 +68,7 @@
   overflow-y: auto;
   padding: var(--ccv-space-3) var(--ccv-space-4);
   font-family: var(--ccv-font-mono);
-  font-size: var(--ccv-text-xs);
+  font-size: var(--ccv-caption);
   line-height: 1.7;
 }
 
@@ -122,5 +122,5 @@
   height: 100%;
   color: var(--ccv-text-tertiary);
   font-family: var(--ccv-font-mono);
-  font-size: var(--ccv-text-sm);
+  font-size: var(--ccv-body-sm);
 }
