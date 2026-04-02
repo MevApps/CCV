@@ -1,0 +1,126 @@
+.terminal {
+  background: var(--ccv-bg-terminal);
+  border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ccv-space-2) var(--ccv-space-4);
+  border-bottom: 1px solid var(--ccv-border-default);
+  background: var(--ccv-bg-secondary);
+}
+
+.terminalTitle {
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-2);
+}
+
+.streamingDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ccv-status-active);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.terminalActions {
+  display: flex;
+  gap: var(--ccv-space-2);
+}
+
+.terminalAction {
+  background: none;
+  border: none;
+  color: var(--ccv-text-tertiary);
+  cursor: pointer;
+  padding: var(--ccv-space-1);
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  border-radius: var(--ccv-radius-sm);
+  transition: color 150ms ease, background 150ms ease;
+}
+
+.terminalAction:hover {
+  color: var(--ccv-text-primary);
+  background: var(--ccv-bg-tertiary);
+}
+
+.terminalOutput {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ccv-space-3) var(--ccv-space-4);
+  font-family: var(--ccv-font-mono);
+  font-size: var(--ccv-text-xs);
+  line-height: 1.7;
+}
+
+.terminalLine {
+  display: flex;
+  gap: var(--ccv-space-3);
+  padding: 1px 0;
+}
+
+.lineTimestamp {
+  color: var(--ccv-text-tertiary);
+  flex-shrink: 0;
+  min-width: 70px;
+  user-select: none;
+}
+
+.lineSource {
+  flex-shrink: 0;
+  min-width: 72px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  padding-top: 1px;
+}
+
+.lineContent {
+  color: var(--ccv-text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  flex: 1;
+}
+
+.lineStderr {
+  color: var(--ccv-status-blocked);
+}
+
+.lineInfo {
+  color: var(--ccv-accent-primary);
+}
+
+.lineTransition {
+  color: var(--ccv-status-paused);
+  font-weight: 600;
+}
+
+.emptyTerminal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--ccv-text-tertiary);
+  font-family: var(--ccv-font-mono);
+  font-size: var(--ccv-text-sm);
+}

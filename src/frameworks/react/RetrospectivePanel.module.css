@@ -1,0 +1,127 @@
+.panel {
+  background: var(--ccv-bg-secondary);
+  border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-lg);
+  overflow: hidden;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-2);
+  padding: var(--ccv-space-3) var(--ccv-space-4);
+  border-bottom: 1px solid var(--ccv-border-default);
+}
+
+.learnerDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ccv-team-learner);
+}
+
+.headerTitle {
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ccv-team-learner);
+}
+
+.panelBody {
+  padding: var(--ccv-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-4);
+}
+
+.summary {
+  font-size: var(--ccv-text-sm);
+  color: var(--ccv-text-primary);
+  line-height: 1.6;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-2);
+}
+
+.sectionTitle {
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-1);
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ccv-space-2);
+  font-size: var(--ccv-text-xs);
+  color: var(--ccv-text-secondary);
+  line-height: 1.5;
+}
+
+.listBullet {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bulletGreen {
+  color: var(--ccv-status-active);
+}
+
+.bulletAmber {
+  color: var(--ccv-status-paused);
+}
+
+.bulletBlue {
+  color: var(--ccv-accent-primary);
+}
+
+.generateButton {
+  background: color-mix(in srgb, var(--ccv-team-learner) 12%, transparent);
+  color: var(--ccv-team-learner);
+  border: 1px solid color-mix(in srgb, var(--ccv-team-learner) 25%, transparent);
+  font-family: var(--ccv-font-mono);
+  font-size: var(--ccv-text-xs);
+  font-weight: 600;
+  padding: var(--ccv-space-2) var(--ccv-space-4);
+  border-radius: var(--ccv-radius-md);
+  cursor: pointer;
+  transition: background 150ms ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.generateButton:hover {
+  background: color-mix(in srgb, var(--ccv-team-learner) 20%, transparent);
+}
+
+.generating {
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-2);
+  font-size: var(--ccv-text-xs);
+  color: var(--ccv-team-learner);
+  font-family: var(--ccv-font-mono);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

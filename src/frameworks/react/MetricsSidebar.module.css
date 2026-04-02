@@ -1,0 +1,171 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-4);
+  overflow-y: auto;
+}
+
+.metricCard {
+  background: var(--ccv-bg-secondary);
+  border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-lg);
+  padding: var(--ccv-space-4);
+}
+
+.metricLabel {
+  font-size: var(--ccv-text-xs);
+  color: var(--ccv-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--ccv-font-mono);
+  margin-bottom: var(--ccv-space-2);
+}
+
+.metricValue {
+  font-size: var(--ccv-text-xl);
+  font-weight: 700;
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-primary);
+}
+
+.metricSub {
+  font-size: var(--ccv-text-xs);
+  color: var(--ccv-text-tertiary);
+  margin-top: var(--ccv-space-1);
+}
+
+/* --- Budget Bar --- */
+
+.budgetBar {
+  margin-top: var(--ccv-space-2);
+}
+
+.budgetTrack {
+  height: 4px;
+  background: var(--ccv-bg-tertiary);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.budgetFill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--ccv-accent-primary);
+  transition: width 300ms ease;
+}
+
+.budgetFill.warning {
+  background: var(--ccv-status-paused);
+}
+
+.budgetFill.danger {
+  background: var(--ccv-status-blocked);
+}
+
+.budgetLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--ccv-space-1);
+  font-size: 10px;
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-tertiary);
+}
+
+/* --- Progress Bar --- */
+
+.progressTrack {
+  height: 6px;
+  background: var(--ccv-bg-tertiary);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: var(--ccv-space-2);
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--ccv-status-active);
+  transition: width 300ms ease;
+}
+
+/* --- Activity Feed --- */
+
+.activityFeed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-2);
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ccv-space-2);
+  padding: var(--ccv-space-2) 0;
+}
+
+.activityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.activityDot.working {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.activityContent {
+  flex: 1;
+}
+
+.activityRole {
+  font-size: 10px;
+  font-family: var(--ccv-font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.activityTask {
+  font-size: var(--ccv-text-xs);
+  color: var(--ccv-text-secondary);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+.activityStatus {
+  font-size: 10px;
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-tertiary);
+}
+
+/* --- Cost --- */
+
+.costValue {
+  font-size: var(--ccv-text-lg);
+  font-weight: 700;
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-primary);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .metricCard {
+    flex: 1;
+    min-width: 180px;
+  }
+}

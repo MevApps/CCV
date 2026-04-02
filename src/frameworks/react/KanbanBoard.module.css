@@ -1,0 +1,195 @@
+.kanban {
+  display: flex;
+  gap: var(--ccv-space-3);
+  overflow-x: auto;
+  padding-bottom: var(--ccv-space-2);
+  flex: 1;
+}
+
+/* --- Stage Column --- */
+
+.stageColumn {
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-2);
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ccv-space-2) var(--ccv-space-3);
+  border-radius: var(--ccv-radius-md);
+  background: var(--ccv-bg-secondary);
+  border: 1px solid var(--ccv-border-default);
+}
+
+.columnHeader.active {
+  border-color: var(--ccv-status-active);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--ccv-status-active) 20%, transparent);
+}
+
+.columnName {
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ccv-text-secondary);
+}
+
+.columnHeader.active .columnName {
+  color: var(--ccv-status-active);
+}
+
+.columnCount {
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-tertiary);
+  background: var(--ccv-bg-tertiary);
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.columnMemberDots {
+  display: flex;
+  gap: 2px;
+}
+
+.memberDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.columnBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-2);
+  flex: 1;
+  min-height: 80px;
+}
+
+/* --- Task Card --- */
+
+.taskCard {
+  background: var(--ccv-bg-secondary);
+  border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-md);
+  padding: var(--ccv-space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccv-space-2);
+  cursor: pointer;
+  transition: border-color 150ms ease, transform 100ms ease;
+  animation: cardEnter 200ms ease-out;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.taskCard:hover {
+  border-color: var(--ccv-border-focus);
+}
+
+.taskCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskDescription {
+  font-size: var(--ccv-text-xs);
+  color: var(--ccv-text-primary);
+  line-height: 1.5;
+}
+
+.taskMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ccv-space-2);
+}
+
+.taskAssignee {
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-1);
+  font-size: 10px;
+  font-family: var(--ccv-font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.assigneeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.taskStats {
+  display: flex;
+  gap: var(--ccv-space-2);
+  font-size: 10px;
+  font-family: var(--ccv-font-mono);
+  color: var(--ccv-text-tertiary);
+}
+
+/* --- Status Indicator --- */
+
+.statusIndicator {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.statusPending {
+  color: var(--ccv-status-pending);
+}
+
+.statusActive {
+  color: var(--ccv-status-active);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.statusCompleted {
+  color: var(--ccv-status-complete);
+}
+
+.statusBlocked {
+  color: var(--ccv-status-blocked);
+}
+
+.emptyColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: var(--ccv-text-tertiary);
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  border: 1px dashed var(--ccv-border-default);
+  border-radius: var(--ccv-radius-md);
+  padding: var(--ccv-space-4);
+}

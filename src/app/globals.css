@@ -1,21 +1,96 @@
+/* ============================================================
+   Claude Code Visualizer — Design Tokens & Base Styles
+   "Terminal-luxe" aesthetic: dark backgrounds, monospace accents,
+   subtle borders, precise spacing.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Base Palette --- */
+  --ccv-bg-primary:       #0D0F11;
+  --ccv-bg-secondary:     #151820;
+  --ccv-bg-tertiary:      #1C2028;
+  --ccv-bg-terminal:      #0A0C0E;
+
+  --ccv-text-primary:     #E8ECF1;
+  --ccv-text-secondary:   #8B95A5;
+  --ccv-text-tertiary:    #5A6370;
+
+  --ccv-border-default:   #1E2430;
+  --ccv-border-focus:     #3B82F6;
+
+  /* --- Accent (Primary Action) --- */
+  --ccv-accent-primary:   #3B82F6;
+  --ccv-accent-hover:     #2563EB;
+  --ccv-accent-subtle:    rgba(59, 130, 246, 0.12);
+
+  /* --- Semantic Status Colors --- */
+  --ccv-status-active:    #22C55E;
+  --ccv-status-complete:  #3B82F6;
+  --ccv-status-blocked:   #EF4444;
+  --ccv-status-pending:   #6B7280;
+  --ccv-status-paused:    #F59E0B;
+
+  /* --- Team Member Colors --- */
+  --ccv-team-architect:   #A78BFA;
+  --ccv-team-developer:   #34D399;
+  --ccv-team-qa:          #FBBF24;
+  --ccv-team-reviewer:    #60A5FA;
+  --ccv-team-product:     #F472B6;
+  --ccv-team-learner:     #FB923C;
+
+  /* --- Mission Type Colors --- */
+  --ccv-type-brainstorm:  #C084FC;
+  --ccv-type-spec:        #67E8F9;
+  --ccv-type-plan:        #86EFAC;
+  --ccv-type-task:        #60A5FA;
+  --ccv-type-epic:        #F472B6;
+  --ccv-type-review:      #FDE047;
+  --ccv-type-bug:         #FCA5A5;
+  --ccv-type-profiling:   #FDBA74;
+
+  /* --- Typography --- */
+  --ccv-font-mono:        var(--font-jetbrains-mono), 'Fira Code', 'SF Mono', monospace;
+  --ccv-font-sans:        var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+
+  --ccv-text-xs:   0.75rem;
+  --ccv-text-sm:   0.875rem;
+  --ccv-text-base: 1rem;
+  --ccv-text-lg:   1.125rem;
+  --ccv-text-xl:   1.5rem;
+  --ccv-text-2xl:  2rem;
+
+  /* --- Spacing (4px base) --- */
+  --ccv-space-1:  0.25rem;
+  --ccv-space-2:  0.5rem;
+  --ccv-space-3:  0.75rem;
+  --ccv-space-4:  1rem;
+  --ccv-space-6:  1.5rem;
+  --ccv-space-8:  2rem;
+  --ccv-space-12: 3rem;
+  --ccv-space-16: 4rem;
+
+  /* --- Radii --- */
+  --ccv-radius-sm: 4px;
+  --ccv-radius-md: 6px;
+  --ccv-radius-lg: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   Base Reset & Global Styles
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
   height: 100%;
+  color-scheme: dark;
 }
 
-html,
-body {
+html, body {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -24,17 +99,12 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ccv-text-primary);
+  background: var(--ccv-bg-primary);
+  font-family: var(--ccv-font-sans);
+  font-size: var(--ccv-text-sm);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
@@ -42,8 +112,94 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* ============================================================
+   Component Patterns
+   ============================================================ */
+
+.ccv-card {
+  background: var(--ccv-bg-secondary);
+  border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-lg);
+  padding: var(--ccv-space-4);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.ccv-card:hover {
+  border-color: var(--ccv-border-focus);
+  box-shadow: 0 0 0 1px var(--ccv-border-focus);
+}
+
+.ccv-input {
+  background: var(--ccv-bg-tertiary);
+  border: 1px solid var(--ccv-border-default);
+  border-radius: var(--ccv-radius-md);
+  color: var(--ccv-text-primary);
+  font-family: var(--ccv-font-mono);
+  padding: var(--ccv-space-3) var(--ccv-space-4);
+  font-size: var(--ccv-text-sm);
+  width: 100%;
+}
+
+.ccv-input:focus {
+  border-color: var(--ccv-accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ccv-accent-subtle);
+}
+
+.ccv-input::placeholder {
+  color: var(--ccv-text-tertiary);
+}
+
+.ccv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccv-space-1);
+  padding: 2px var(--ccv-space-2);
+  border-radius: var(--ccv-radius-sm);
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: color-mix(in srgb, var(--badge-color) 15%, transparent);
+  color: var(--badge-color);
+}
+
+.ccv-button-primary {
+  background: var(--ccv-accent-primary);
+  color: white;
+  font-family: var(--ccv-font-sans);
+  font-weight: 600;
+  padding: var(--ccv-space-3) var(--ccv-space-6);
+  border-radius: var(--ccv-radius-md);
+  border: none;
+  cursor: pointer;
+  font-size: var(--ccv-text-sm);
+  transition: background 150ms ease, transform 100ms ease;
+}
+
+.ccv-button-primary:hover {
+  background: var(--ccv-accent-hover);
+}
+
+.ccv-button-primary:active {
+  transform: scale(0.98);
+}
+
+.ccv-button-secondary {
+  background: transparent;
+  color: var(--ccv-text-secondary);
+  font-family: var(--ccv-font-sans);
+  font-weight: 500;
+  padding: var(--ccv-space-3) var(--ccv-space-6);
+  border-radius: var(--ccv-radius-md);
+  border: 1px solid var(--ccv-border-default);
+  cursor: pointer;
+  font-size: var(--ccv-text-sm);
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.ccv-button-secondary:hover {
+  border-color: var(--ccv-text-tertiary);
+  color: var(--ccv-text-primary);
 }

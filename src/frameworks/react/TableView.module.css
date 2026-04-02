@@ -1,0 +1,93 @@
+.tableContainer {
+  overflow-x: auto;
+  flex: 1;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ccv-text-xs);
+  font-family: var(--ccv-font-mono);
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table th {
+  background: var(--ccv-bg-secondary);
+  border-bottom: 1px solid var(--ccv-border-default);
+  padding: var(--ccv-space-2) var(--ccv-space-3);
+  text-align: left;
+  color: var(--ccv-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: color 150ms ease;
+  white-space: nowrap;
+}
+
+.table th:hover {
+  color: var(--ccv-text-secondary);
+}
+
+.sortIcon {
+  margin-left: var(--ccv-space-1);
+  font-size: 10px;
+}
+
+.table td {
+  padding: var(--ccv-space-2) var(--ccv-space-3);
+  border-bottom: 1px solid var(--ccv-border-default);
+  color: var(--ccv-text-primary);
+  white-space: nowrap;
+}
+
+.table tr:hover td {
+  background: var(--ccv-bg-tertiary);
+}
+
+.assigneeCell {
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-2);
+}
+
+.assigneeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.stageCell {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.statusCell {
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-1);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.emptyTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ccv-space-12);
+  color: var(--ccv-text-tertiary);
+  font-family: var(--ccv-font-mono);
+  font-size: var(--ccv-text-sm);
+}

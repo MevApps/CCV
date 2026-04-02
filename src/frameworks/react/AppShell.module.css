@@ -1,0 +1,28 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--ccv-bg-primary);
+}
+
+.mainArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.content {
+  flex: 1;
+  padding: var(--ccv-space-6);
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: var(--ccv-space-4);
+  }
+}
