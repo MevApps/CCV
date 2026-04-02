@@ -1,0 +1,114 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: var(--ccv-space-3) var(--ccv-space-5);
+  border-bottom: 1px solid var(--ccv-border-default);
+  background: var(--ccv-bg-primary);
+  min-height: 48px;
+  gap: var(--ccv-space-4);
+}
+
+.left { flex-shrink: 0; }
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--ccv-space-2);
+  border-radius: var(--ccv-radius-sm);
+  font-size: var(--ccv-label);
+  font-family: var(--ccv-font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: color-mix(in srgb, var(--badge-color) 15%, transparent);
+  color: var(--badge-color);
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ccv-space-3);
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--ccv-body-md);
+  font-weight: 600;
+  color: var(--ccv-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statusGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--ccv-space-2);
+  flex-shrink: 0;
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ccv-status-active);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.statusText {
+  font-size: var(--ccv-caption);
+  color: var(--ccv-text-secondary);
+  font-family: var(--ccv-font-mono);
+  text-transform: uppercase;
+}
+
+.elapsed {
+  font-size: var(--ccv-caption);
+  color: var(--ccv-text-tertiary);
+  font-family: var(--ccv-font-mono);
+}
+
+.right {
+  display: flex;
+  gap: var(--ccv-space-2);
+  flex-shrink: 0;
+}
+
+.controlBtn {
+  font-family: var(--ccv-font-sans);
+  font-size: var(--ccv-body-sm);
+  font-weight: 500;
+  padding: var(--ccv-space-1) var(--ccv-space-3);
+  border-radius: var(--ccv-radius-md);
+  border: 1px solid;
+  cursor: pointer;
+  transition: background var(--ccv-transition-fast);
+}
+
+.pauseBtn {
+  border-color: var(--ccv-status-paused);
+  color: var(--ccv-status-paused);
+  background: transparent;
+}
+.pauseBtn:hover { background: rgba(245,158,11,0.1); }
+
+.cancelBtn {
+  border-color: var(--ccv-status-blocked);
+  color: var(--ccv-status-blocked);
+  background: transparent;
+}
+.cancelBtn:hover { background: rgba(239,68,68,0.1); }
+
+.retryBtn {
+  border-color: var(--ccv-accent-primary);
+  color: var(--ccv-accent-primary);
+  background: transparent;
+}
+.retryBtn:hover { background: var(--ccv-accent-ghost); }
