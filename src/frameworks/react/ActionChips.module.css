@@ -1,0 +1,14 @@
+.container { display: flex; flex-wrap: wrap; gap: var(--ccv-space-2); padding: var(--ccv-space-2) 0; }
+.chip {
+  display: inline-flex; align-items: center;
+  padding: var(--ccv-space-1) var(--ccv-space-3);
+  border-radius: var(--ccv-radius-pill); border: 1px solid var(--ccv-border-default);
+  background: transparent; color: var(--ccv-text-secondary);
+  font-family: var(--ccv-font-sans); font-size: var(--ccv-body-sm);
+  cursor: pointer;
+  transition: transform var(--ccv-transition-fast), box-shadow var(--ccv-transition-fast), border-color var(--ccv-transition-fast);
+}
+.chip:hover {
+  border-color: var(--ccv-border-hover); color: var(--ccv-text-primary);
+  transform: translateY(-1px); box-shadow: var(--ccv-shadow-sm);
+}
