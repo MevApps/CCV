@@ -1,53 +1,34 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import { useAppStore } from './store';
 import { Sidebar } from './Sidebar';
-import { TopBar } from './TopBar';
+import { RightPanel } from './RightPanel';
 import styles from './AppShell.module.css';
-
-const BREADCRUMB_MAP: Record<string, string> = {
-  '/': 'Dashboard',
-  '/missions/create': 'New Mission',
-};
-
-function breadcrumbFor(pathname: string): string {
-  if (BREADCRUMB_MAP[pathname]) return BREADCRUMB_MAP[pathname];
-  if (pathname.startsWith('/missions/')) return 'Mission Detail';
-  return 'Dashboard';
-}
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const missions = useAppStore((s) => s.missions);
-  const setSearchQuery = useAppStore((s) => s.setSearchQuery);
+  const sidebarCollapsed = useAppStore((s) => s.ui.sidebarCollapsed);
+  const rightPanelOpen = useAppStore((s) => s.ui.rightPanelOpen);
+  const setSidebarCollapsed = useAppStore((s) => s.setSidebarCollapsed);
 
-  const activeMissions = missions.filter((m) => m.status === 'active');
-  const breadcrumb = breadcrumbFor(pathname);
-
-  const handleNavigate = (route: string) => {
-    router.push(route);
-  };
+  const isMissionRoute = pathname.startsWith('/missions/') && pathname !== '/missions/create';
 
   return (
     <div className={styles.shell}>
       <Sidebar
-        activeMissions={activeMissions}
+        collapsed={sidebarCollapsed}
+        onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
         currentRoute={pathname}
-        onNavigate={handleNavigate}
+        onNavigate={(route) => router.push(route)}
       />
-      <div className={styles.mainArea}>
-        <TopBar
-          breadcrumb={breadcrumb}
-          onSearch={setSearchQuery}
-          onCreateMission={() => router.push('/missions/create')}
-        />
-        <main className={styles.content}>
-          {children}
-        </main>
-      </div>
+
+      <main className={styles.mainArea}>
+        {children}
+      </main>
+
+      {isMissionRoute && rightPanelOpen && <RightPanel />}
     </div>
   );
 }

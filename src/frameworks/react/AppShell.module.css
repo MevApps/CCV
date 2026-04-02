@@ -1,28 +1,32 @@
 .shell {
   display: flex;
   min-height: 100vh;
-  background: var(--ccv-bg-primary);
+  background: var(--ccv-bg-base);
 }
 
 .mainArea {
   flex: 1;
+  min-width: 400px;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+  overflow: hidden;
 }
 
-.content {
-  flex: 1;
-  padding: var(--ccv-space-6);
-  overflow-y: auto;
+/* Tablet: sidebar overlays */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .mainArea {
+    min-width: 0;
+  }
 }
 
-@media (max-width: 768px) {
+/* Mobile: single column */
+@media (max-width: 640px) {
   .shell {
     flex-direction: column;
   }
 
-  .content {
-    padding: var(--ccv-space-4);
+  .mainArea {
+    min-width: 0;
+    flex: 1;
   }
 }
