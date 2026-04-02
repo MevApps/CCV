@@ -1,5 +1,5 @@
-import { DashboardView } from '@/frameworks/react/DashboardView';
+import { HomeScreen } from '@/frameworks/react/HomeScreen';
 
 export default function Home() {
-  return <DashboardView />;
+  return <HomeScreen />;
 }
