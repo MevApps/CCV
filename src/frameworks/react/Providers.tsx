@@ -1,6 +1,7 @@
 'use client';
 
 import { useWebSocket } from './useWebSocket';
+import { ThemeProvider } from './ThemeProvider';
 
 /**
  * Providers — initializes client-side services.
@@ -12,5 +13,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
   // Initialize WebSocket connection
   useWebSocket();
 
-  return <>{children}</>;
+  return <ThemeProvider>{children}</ThemeProvider>;
 }

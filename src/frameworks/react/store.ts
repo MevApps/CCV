@@ -19,6 +19,9 @@ interface UiState {
   sidebarCollapsed: boolean;
   missionDetailView: 'kanban' | 'table';
   searchQuery: string;
+  theme: 'dark' | 'light' | 'system';
+  rightPanelOpen: boolean;
+  rightPanelTab: 'code' | 'stages' | 'metrics' | 'team';
 }
 
 interface RealtimeState {
@@ -47,6 +50,9 @@ interface AppState {
   setSidebarCollapsed: (collapsed: boolean) => void;
   setMissionDetailView: (view: 'kanban' | 'table') => void;
   setSearchQuery: (query: string) => void;
+  setTheme: (theme: 'dark' | 'light' | 'system') => void;
+  setRightPanelOpen: (open: boolean) => void;
+  setRightPanelTab: (tab: 'code' | 'stages' | 'metrics' | 'team') => void;
 
   // Actions — realtime
   appendTerminalLine: (missionId: string, line: TerminalLine) => void;
@@ -62,6 +68,9 @@ export const useAppStore = create<AppState>((set) => ({
     sidebarCollapsed: false,
     missionDetailView: 'kanban',
     searchQuery: '',
+    theme: 'dark',
+    rightPanelOpen: true,
+    rightPanelTab: 'stages',
   },
   realtime: {
     streamingLines: new Map(),
@@ -92,6 +101,15 @@ export const useAppStore = create<AppState>((set) => ({
 
   setSearchQuery: (query) =>
     set((state) => ({ ui: { ...state.ui, searchQuery: query } })),
+
+  setTheme: (theme) =>
+    set((state) => ({ ui: { ...state.ui, theme } })),
+
+  setRightPanelOpen: (open) =>
+    set((state) => ({ ui: { ...state.ui, rightPanelOpen: open } })),
+
+  setRightPanelTab: (tab) =>
+    set((state) => ({ ui: { ...state.ui, rightPanelTab: tab } })),
 
   // Realtime actions
   appendTerminalLine: (missionId, line) =>
