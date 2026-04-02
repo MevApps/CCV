@@ -43,6 +43,19 @@ export interface StageTaskViewModel {
   duration: string;
 }
 
+export interface SidebarMissionItem {
+  id: string;
+  title: string;
+  type: MissionType;
+  status: MissionStatus;
+  progress: number;
+  activeAgentCount: number;
+  teamColors: string[];
+  tokenCount: string;
+  duration: string;
+  elapsedTime: string;
+}
+
 export interface TerminalLine {
   id: string;
   content: string;

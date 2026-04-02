@@ -10,7 +10,7 @@
  */
 
 import type { Mission, TeamMemberRole, Stage } from '@/domain';
-import type { MissionSummary, StageViewModel, StageTaskViewModel } from './view-models';
+import type { MissionSummary, StageViewModel, StageTaskViewModel, SidebarMissionItem } from './view-models';
 
 const TEAM_COLORS: Record<TeamMemberRole, string> = {
   architect: 'var(--ccv-team-architect)',
@@ -77,6 +77,26 @@ export function toMissionSummary(mission: Mission): MissionSummary {
     tokenCount: mission.metrics.totalTokens,
     duration: formatDuration(mission.metrics.totalDurationMs),
     updatedAt: formatRelativeTime(mission.updatedAt),
+  };
+}
+
+export function toSidebarMissionItem(mission: Mission): SidebarMissionItem {
+  const activeMembers = mission.teamMembers.filter((tm) => tm.status === 'working');
+  const memberColors = mission.teamMembers.map((tm) => TEAM_COLORS[tm.member.role]);
+
+  return {
+    id: mission.id,
+    title: mission.title,
+    type: mission.type,
+    status: mission.status,
+    progress: mission.metrics.taskCount > 0
+      ? Math.round((mission.metrics.completedTaskCount / mission.metrics.taskCount) * 100)
+      : 0,
+    activeAgentCount: activeMembers.length,
+    teamColors: memberColors,
+    tokenCount: formatTokens(mission.metrics.totalTokens),
+    duration: formatDuration(mission.metrics.totalDurationMs),
+    elapsedTime: formatDuration(Date.now() - mission.createdAt.getTime()),
   };
 }
 
